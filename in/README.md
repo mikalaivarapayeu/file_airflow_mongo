@@ -1,0 +1,1 @@
+This folder where csv file with initial data should be located

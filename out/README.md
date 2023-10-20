@@ -1,0 +1,1 @@
+This folder where the temporary file after runing transvoration via notebook run is placed. This file is deleted in the last tak of pipeline.
