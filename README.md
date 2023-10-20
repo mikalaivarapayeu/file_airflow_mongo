@@ -6,7 +6,10 @@
 4. output.json file is temporary and is deleted at the end pipeline.
 
 ## Technical notes of the pipeline
+
 The whole pipeline works as docker containers, so docker and docker compose should be installed.
+
+The command _docker build ./docker/pandasapp_ should be run to create custom image of pandas application.
 
 To start application move to folder where docker-compose.yaml file is loacated and run in terminal the following command: _docker compose -f docker-compose.yaml up -d_.
 
