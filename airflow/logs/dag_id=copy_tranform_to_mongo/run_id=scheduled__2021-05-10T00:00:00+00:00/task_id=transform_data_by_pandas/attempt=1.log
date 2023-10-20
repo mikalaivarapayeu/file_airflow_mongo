@@ -1,0 +1,75 @@
+[2023-10-18T11:43:31.650+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-05-10T00:00:00+00:00 [queued]>
+[2023-10-18T11:43:31.672+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-05-10T00:00:00+00:00 [queued]>
+[2023-10-18T11:43:31.673+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-18T11:43:31.696+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): transform_data_by_pandas> on 2021-05-10 00:00:00+00:00
+[2023-10-18T11:43:31.712+0000] {standard_task_runner.py:57} INFO - Started process 994 to run task
+[2023-10-18T11:43:31.721+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'copy_tranform_to_mongo', 'transform_data_by_pandas', 'scheduled__2021-05-10T00:00:00+00:00', '--job-id', '229', '--raw', '--subdir', 'DAGS_FOLDER/file_***-mongo.py', '--cfg-path', '/tmp/tmp5wpk2u8n']
+[2023-10-18T11:43:31.722+0000] {standard_task_runner.py:85} INFO - Job 229: Subtask transform_data_by_pandas
+[2023-10-18T11:43:31.810+0000] {task_command.py:416} INFO - Running <TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-05-10T00:00:00+00:00 [running]> on host 0e68aa52dfc7
+[2023-10-18T11:43:31.947+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='copy_tranform_to_mongo' AIRFLOW_CTX_TASK_ID='transform_data_by_pandas' AIRFLOW_CTX_EXECUTION_DATE='2021-05-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-05-10T00:00:00+00:00'
+[2023-10-18T11:43:31.995+0000] {docker.py:337} INFO - Starting docker container from image python/pandas:1.0.0
+[2023-10-18T11:43:32.027+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 268, in _raise_for_status
+    response.raise_for_status()
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: http+docker://localhost/v1.43/containers/create
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 479, in execute
+    return self._run_image()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 354, in _run_image
+    return self._run_image_with_mounts(self.mounts, add_tmp_variable=False)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 369, in _run_image_with_mounts
+    self.container = self.cli.create_container(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 431, in create_container
+    return self.create_container_from_config(config, name, platform)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/container.py", line 448, in create_container_from_config
+    return self._result(res, True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 274, in _result
+    self._raise_for_status(response)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 270, in _raise_for_status
+    raise create_api_error_from_http_exception(e) from e
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/errors.py", line 39, in create_api_error_from_http_exception
+    raise cls(e, response=response, explanation=explanation) from e
+docker.errors.APIError: 400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request ("create $PWD: "$PWD" includes invalid characters for a local volume name, only "[a-zA-Z0-9][a-zA-Z0-9_.-]" are allowed. If you intended to pass a host directory, use absolute path")
+[2023-10-18T11:43:32.072+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=copy_tranform_to_mongo, task_id=transform_data_by_pandas, execution_date=20210510T000000, start_date=20231018T114331, end_date=20231018T114332
+[2023-10-18T11:43:32.099+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 229 for task transform_data_by_pandas (400 Client Error for http+docker://localhost/v1.43/containers/create: Bad Request ("create $PWD: "$PWD" includes invalid characters for a local volume name, only "[a-zA-Z0-9][a-zA-Z0-9_.-]" are allowed. If you intended to pass a host directory, use absolute path"); 994)
+[2023-10-18T11:43:32.164+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-18T11:43:32.198+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-19T12:44:27.191+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-05-10T00:00:00+00:00 [queued]>
+[2023-10-19T12:44:27.216+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-05-10T00:00:00+00:00 [queued]>
+[2023-10-19T12:44:27.216+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-19T12:44:27.246+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): transform_data_by_pandas> on 2021-05-10 00:00:00+00:00
+[2023-10-19T12:44:27.262+0000] {standard_task_runner.py:57} INFO - Started process 1206 to run task
+[2023-10-19T12:44:27.290+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'copy_tranform_to_mongo', 'transform_data_by_pandas', 'scheduled__2021-05-10T00:00:00+00:00', '--job-id', '265', '--raw', '--subdir', 'DAGS_FOLDER/file_***-mongo.py', '--cfg-path', '/tmp/tmp96meb2zc']
+[2023-10-19T12:44:27.292+0000] {standard_task_runner.py:85} INFO - Job 265: Subtask transform_data_by_pandas
+[2023-10-19T12:44:27.380+0000] {task_command.py:416} INFO - Running <TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-05-10T00:00:00+00:00 [running]> on host 6f5df7fea6fd
+[2023-10-19T12:44:27.500+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='copy_tranform_to_mongo' AIRFLOW_CTX_TASK_ID='transform_data_by_pandas' AIRFLOW_CTX_EXECUTION_DATE='2021-05-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-05-10T00:00:00+00:00'
+[2023-10-19T12:44:27.536+0000] {docker.py:337} INFO - Starting docker container from image python/pandas:1.0.0
+[2023-10-19T12:44:28.717+0000] {docker.py:406} INFO - Input Notebook:  /opt/pandasapp/notebooks/tiktok_google_reviews.ipynb
+Output Notebook: /opt/pandasapp/notebooks/tiktok_google_reviews.ipynb
+[2023-10-19T12:44:28.807+0000] {docker.py:406} INFO - Executing:   0%|          | 0/27 [00:00<?, ?cell/s]
+[2023-10-19T12:44:30.225+0000] {docker.py:406} INFO - Executing notebook with kernel: python3
+[2023-10-19T12:44:30.239+0000] {docker.py:406} INFO - Executing:   4%|▎         | 1/27 [00:01<00:37,  1.43s/cell]
+[2023-10-19T12:44:31.525+0000] {docker.py:406} INFO - Executing:  15%|█▍        | 4/27 [00:02<00:14,  1.62cell/s]
+[2023-10-19T12:44:35.516+0000] {docker.py:406} INFO - Executing:  22%|██▏       | 6/27 [00:06<00:25,  1.22s/cell]
+[2023-10-19T12:44:35.649+0000] {docker.py:406} INFO - Executing:  33%|███▎      | 9/27 [00:06<00:11,  1.54cell/s]
+[2023-10-19T12:44:35.760+0000] {docker.py:406} INFO - Executing:  41%|████      | 11/27 [00:06<00:07,  2.16cell/s]
+[2023-10-19T12:44:36.124+0000] {docker.py:406} INFO - Executing:  48%|████▊     | 13/27 [00:07<00:05,  2.66cell/s]
+[2023-10-19T12:44:36.955+0000] {docker.py:406} INFO - Executing:  59%|█████▉    | 16/27 [00:08<00:03,  2.97cell/s]
+[2023-10-19T12:44:37.983+0000] {docker.py:406} INFO - Executing:  63%|██████▎   | 17/27 [00:09<00:04,  2.24cell/s]
+[2023-10-19T12:44:38.096+0000] {docker.py:406} INFO - Executing:  70%|███████   | 19/27 [00:09<00:02,  3.08cell/s]
+[2023-10-19T12:44:38.593+0000] {docker.py:406} INFO - Executing:  74%|███████▍  | 20/27 [00:09<00:02,  2.81cell/s]
+[2023-10-19T12:44:38.968+0000] {docker.py:406} INFO - Executing:  78%|███████▊  | 21/27 [00:10<00:02,  2.78cell/s]
+[2023-10-19T12:44:39.836+0000] {docker.py:406} INFO - Executing:  81%|████████▏ | 22/27 [00:11<00:02,  2.10cell/s]
+[2023-10-19T12:44:40.456+0000] {docker.py:406} INFO - Executing:  85%|████████▌ | 23/27 [00:11<00:02,  1.96cell/s]
+[2023-10-19T12:44:40.564+0000] {docker.py:406} INFO - Executing:  93%|█████████▎| 25/27 [00:11<00:00,  3.10cell/s]
+[2023-10-19T12:44:42.427+0000] {docker.py:406} INFO - Executing:  96%|█████████▋| 26/27 [00:13<00:00,  1.48cell/s]
+[2023-10-19T12:44:43.491+0000] {docker.py:406} INFO - Executing: 100%|██████████| 27/27 [00:14<00:00,  1.84cell/s]
+[2023-10-19T12:44:44.450+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=copy_tranform_to_mongo, task_id=transform_data_by_pandas, execution_date=20210510T000000, start_date=20231019T124427, end_date=20231019T124444
+[2023-10-19T12:44:44.519+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-19T12:44:44.551+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

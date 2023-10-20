@@ -1,0 +1,32 @@
+[2023-10-17T11:23:47.448+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.waiting_for_data scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-10-17T11:23:47.461+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.waiting_for_data scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-10-17T11:23:47.461+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-17T11:23:47.501+0000] {taskinstance.py:1382} INFO - Executing <Task(FileSensor): waiting_for_data> on 2022-09-10 00:00:00+00:00
+[2023-10-17T11:23:47.509+0000] {standard_task_runner.py:57} INFO - Started process 1732 to run task
+[2023-10-17T11:23:47.511+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'copy_tranform_to_mongo', 'waiting_for_data', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '622', '--raw', '--subdir', 'DAGS_FOLDER/file_***-mongo.py', '--cfg-path', '/tmp/tmpdjqr3wt1']
+[2023-10-17T11:23:47.513+0000] {standard_task_runner.py:85} INFO - Job 622: Subtask waiting_for_data
+[2023-10-17T11:23:47.558+0000] {task_command.py:416} INFO - Running <TaskInstance: copy_tranform_to_mongo.waiting_for_data scheduled__2022-09-10T00:00:00+00:00 [running]> on host 238c1d4ff767
+[2023-10-17T11:23:47.634+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='copy_tranform_to_mongo' AIRFLOW_CTX_TASK_ID='waiting_for_data' AIRFLOW_CTX_EXECUTION_DATE='2022-09-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-09-10T00:00:00+00:00'
+[2023-10-17T11:23:47.642+0000] {base.py:73} INFO - Using connection ID 'fs_default' for task execution.
+[2023-10-17T11:23:47.643+0000] {filesystem.py:64} INFO - Poking for file /opt/in/tiktok_google_play_reviews.csv
+[2023-10-17T11:23:47.643+0000] {filesystem.py:69} INFO - Found File /opt/in/tiktok_google_play_reviews.csv last modified: 20220405221612
+[2023-10-17T11:23:47.643+0000] {base.py:287} INFO - Success criteria met. Exiting.
+[2023-10-17T11:23:47.649+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=copy_tranform_to_mongo, task_id=waiting_for_data, execution_date=20220910T000000, start_date=20231017T112347, end_date=20231017T112347
+[2023-10-17T11:23:47.683+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-17T11:23:47.698+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-18T11:48:32.221+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.waiting_for_data scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-10-18T11:48:32.234+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.waiting_for_data scheduled__2022-09-10T00:00:00+00:00 [queued]>
+[2023-10-18T11:48:32.234+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-18T11:48:32.250+0000] {taskinstance.py:1382} INFO - Executing <Task(FileSensor): waiting_for_data> on 2022-09-10 00:00:00+00:00
+[2023-10-18T11:48:32.257+0000] {standard_task_runner.py:57} INFO - Started process 3001 to run task
+[2023-10-18T11:48:32.261+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'copy_tranform_to_mongo', 'waiting_for_data', 'scheduled__2022-09-10T00:00:00+00:00', '--job-id', '1197', '--raw', '--subdir', 'DAGS_FOLDER/file_***-mongo.py', '--cfg-path', '/tmp/tmp8r9tt9h5']
+[2023-10-18T11:48:32.262+0000] {standard_task_runner.py:85} INFO - Job 1197: Subtask waiting_for_data
+[2023-10-18T11:48:32.312+0000] {task_command.py:416} INFO - Running <TaskInstance: copy_tranform_to_mongo.waiting_for_data scheduled__2022-09-10T00:00:00+00:00 [running]> on host 0e68aa52dfc7
+[2023-10-18T11:48:32.384+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='copy_tranform_to_mongo' AIRFLOW_CTX_TASK_ID='waiting_for_data' AIRFLOW_CTX_EXECUTION_DATE='2022-09-10T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2022-09-10T00:00:00+00:00'
+[2023-10-18T11:48:32.394+0000] {base.py:73} INFO - Using connection ID 'fs_default' for task execution.
+[2023-10-18T11:48:32.394+0000] {filesystem.py:64} INFO - Poking for file /opt/in/tiktok_google_play_reviews.csv
+[2023-10-18T11:48:32.394+0000] {filesystem.py:69} INFO - Found File /opt/in/tiktok_google_play_reviews.csv last modified: 20220405221612
+[2023-10-18T11:48:32.394+0000] {base.py:287} INFO - Success criteria met. Exiting.
+[2023-10-18T11:48:32.403+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=copy_tranform_to_mongo, task_id=waiting_for_data, execution_date=20220910T000000, start_date=20231018T114832, end_date=20231018T114832
+[2023-10-18T11:48:32.434+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-18T11:48:32.475+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

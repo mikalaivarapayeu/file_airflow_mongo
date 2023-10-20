@@ -1,0 +1,142 @@
+[2023-10-18T11:17:37.352+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-04-23T00:00:00+00:00 [queued]>
+[2023-10-18T11:17:37.366+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-04-23T00:00:00+00:00 [queued]>
+[2023-10-18T11:17:37.367+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-18T11:17:37.383+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): transform_data_by_pandas> on 2021-04-23 00:00:00+00:00
+[2023-10-18T11:17:37.391+0000] {standard_task_runner.py:57} INFO - Started process 521 to run task
+[2023-10-18T11:17:37.399+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'copy_tranform_to_mongo', 'transform_data_by_pandas', 'scheduled__2021-04-23T00:00:00+00:00', '--job-id', '195', '--raw', '--subdir', 'DAGS_FOLDER/file_***-mongo.py', '--cfg-path', '/tmp/tmpetj1vb9f']
+[2023-10-18T11:17:37.400+0000] {standard_task_runner.py:85} INFO - Job 195: Subtask transform_data_by_pandas
+[2023-10-18T11:17:37.462+0000] {task_command.py:416} INFO - Running <TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-04-23T00:00:00+00:00 [running]> on host 0e68aa52dfc7
+[2023-10-18T11:17:37.587+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='copy_tranform_to_mongo' AIRFLOW_CTX_TASK_ID='transform_data_by_pandas' AIRFLOW_CTX_EXECUTION_DATE='2021-04-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-04-23T00:00:00+00:00'
+[2023-10-18T11:17:37.600+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 415, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/local/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/transport/unixconn.py", line 27, in connect
+    sock.connect(self.unix_socket)
+PermissionError: [Errno 13] Permission denied
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 486, in send
+    resp = conn.urlopen(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 798, in urlopen
+    retries = retries.increment(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/util/retry.py", line 550, in increment
+    raise six.reraise(type(error), error, _stacktrace)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/packages/six.py", line 769, in reraise
+    raise value.with_traceback(tb)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 714, in urlopen
+    httplib_response = self._make_request(
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connectionpool.py", line 415, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "/home/airflow/.local/lib/python3.8/site-packages/urllib3/connection.py", line 244, in request
+    super(HTTPConnection, self).request(method, url, body=body, headers=headers)
+  File "/usr/local/lib/python3.8/http/client.py", line 1256, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1302, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1251, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/local/lib/python3.8/http/client.py", line 1011, in _send_output
+    self.send(msg)
+  File "/usr/local/lib/python3.8/http/client.py", line 951, in send
+    self.connect()
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/transport/unixconn.py", line 27, in connect
+    sock.connect(self.unix_socket)
+urllib3.exceptions.ProtocolError: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 214, in _retrieve_server_version
+    return self.version(api_version=False)["ApiVersion"]
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/daemon.py", line 181, in version
+    return self._result(self._get(url), json=True)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/utils/decorators.py", line 46, in inner
+    return f(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 237, in _get
+    return self.get(url, **self._set_request_timeout(kwargs))
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/requests/adapters.py", line 501, in send
+    raise ConnectionError(err, request=request)
+requests.exceptions.ConnectionError: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 462, in execute
+    if self.force_pull or not self.cli.images(name=self.image):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/operators/docker.py", line 333, in cli
+    return self.hook.api_client
+  File "/usr/local/lib/python3.8/functools.py", line 967, in __get__
+    val = self.func(instance)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/providers/docker/hooks/docker.py", line 120, in api_client
+    client = APIClient(
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 197, in __init__
+    self._version = self._retrieve_server_version()
+  File "/home/airflow/.local/lib/python3.8/site-packages/docker/api/client.py", line 221, in _retrieve_server_version
+    raise DockerException(
+docker.errors.DockerException: Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied'))
+[2023-10-18T11:17:37.639+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=copy_tranform_to_mongo, task_id=transform_data_by_pandas, execution_date=20210423T000000, start_date=20231018T111737, end_date=20231018T111737
+[2023-10-18T11:17:37.658+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 195 for task transform_data_by_pandas (Error while fetching server API version: ('Connection aborted.', PermissionError(13, 'Permission denied')); 521)
+[2023-10-18T11:17:37.730+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2023-10-18T11:17:37.759+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2023-10-19T12:42:56.242+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-04-23T00:00:00+00:00 [queued]>
+[2023-10-19T12:42:56.277+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-04-23T00:00:00+00:00 [queued]>
+[2023-10-19T12:42:56.277+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-19T12:42:56.301+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): transform_data_by_pandas> on 2021-04-23 00:00:00+00:00
+[2023-10-19T12:42:56.313+0000] {standard_task_runner.py:57} INFO - Started process 1084 to run task
+[2023-10-19T12:42:56.323+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'copy_tranform_to_mongo', 'transform_data_by_pandas', 'scheduled__2021-04-23T00:00:00+00:00', '--job-id', '212', '--raw', '--subdir', 'DAGS_FOLDER/file_***-mongo.py', '--cfg-path', '/tmp/tmp2ymgmtam']
+[2023-10-19T12:42:56.324+0000] {standard_task_runner.py:85} INFO - Job 212: Subtask transform_data_by_pandas
+[2023-10-19T12:42:56.394+0000] {task_command.py:416} INFO - Running <TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-04-23T00:00:00+00:00 [running]> on host 6f5df7fea6fd
+[2023-10-19T12:42:56.498+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='copy_tranform_to_mongo' AIRFLOW_CTX_TASK_ID='transform_data_by_pandas' AIRFLOW_CTX_EXECUTION_DATE='2021-04-23T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-04-23T00:00:00+00:00'
+[2023-10-19T12:42:56.530+0000] {docker.py:337} INFO - Starting docker container from image python/pandas:1.0.0
+[2023-10-19T12:42:57.722+0000] {docker.py:406} INFO - Input Notebook:  /opt/pandasapp/notebooks/tiktok_google_reviews.ipynb
+Output Notebook: /opt/pandasapp/notebooks/tiktok_google_reviews.ipynb
+[2023-10-19T12:42:57.794+0000] {docker.py:406} INFO - Executing:   0%|          | 0/27 [00:00<?, ?cell/s]
+[2023-10-19T12:42:59.277+0000] {docker.py:406} INFO - Executing notebook with kernel: python3
+[2023-10-19T12:42:59.293+0000] {docker.py:406} INFO - Executing:   4%|▎         | 1/27 [00:01<00:39,  1.50s/cell]
+[2023-10-19T12:42:59.401+0000] {docker.py:406} INFO - Executing:  11%|█         | 3/27 [00:01<00:10,  2.34cell/s]
+[2023-10-19T12:43:01.546+0000] {docker.py:406} INFO - Executing:  19%|█▊        | 5/27 [00:03<00:16,  1.32cell/s]
+[2023-10-19T12:43:10.575+0000] {docker.py:406} INFO - Executing:  22%|██▏       | 6/27 [00:12<01:02,  2.98s/cell]
+[2023-10-19T12:43:10.717+0000] {docker.py:406} INFO - Executing:  30%|██▉       | 8/27 [00:12<00:32,  1.72s/cell]
+[2023-10-19T12:43:10.989+0000] {docker.py:406} INFO - Executing:  33%|███▎      | 9/27 [00:13<00:24,  1.37s/cell]
+[2023-10-19T12:43:11.188+0000] {docker.py:406} INFO - Executing:  41%|████      | 11/27 [00:13<00:13,  1.16cell/s]
+[2023-10-19T12:43:11.735+0000] {docker.py:406} INFO - Executing:  44%|████▍     | 12/27 [00:13<00:11,  1.26cell/s]
+[2023-10-19T12:43:12.193+0000] {docker.py:406} INFO - Executing:  48%|████▊     | 13/27 [00:14<00:09,  1.41cell/s]
+[2023-10-19T12:43:12.391+0000] {docker.py:406} INFO - Executing:  52%|█████▏    | 14/27 [00:14<00:07,  1.73cell/s]
+[2023-10-19T12:43:13.370+0000] {docker.py:406} INFO - Executing:  59%|█████▉    | 16/27 [00:15<00:05,  1.85cell/s]
+[2023-10-19T12:43:16.308+0000] {docker.py:406} INFO - Executing:  63%|██████▎   | 17/27 [00:18<00:10,  1.10s/cell]
+[2023-10-19T12:43:16.688+0000] {docker.py:406} INFO - Executing:  70%|███████   | 19/27 [00:18<00:05,  1.36cell/s]
+[2023-10-19T12:43:17.704+0000] {docker.py:406} INFO - Executing:  74%|███████▍  | 20/27 [00:19<00:05,  1.25cell/s]
+[2023-10-19T12:43:19.077+0000] {docker.py:406} INFO - Executing:  78%|███████▊  | 21/27 [00:21<00:05,  1.07cell/s]
+[2023-10-19T12:43:20.252+0000] {docker.py:406} INFO - Executing:  81%|████████▏ | 22/27 [00:22<00:04,  1.00cell/s]
+[2023-10-19T12:43:21.485+0000] {docker.py:406} INFO - Executing:  85%|████████▌ | 23/27 [00:23<00:04,  1.06s/cell]
+[2023-10-19T12:43:21.631+0000] {docker.py:406} INFO - Executing:  89%|████████▉ | 24/27 [00:23<00:02,  1.24cell/s]
+[2023-10-19T12:43:22.096+0000] {docker.py:406} INFO - Executing:  93%|█████████▎| 25/27 [00:24<00:01,  1.41cell/s]
+[2023-10-19T12:43:25.851+0000] {docker.py:406} INFO - Executing:  96%|█████████▋| 26/27 [00:28<00:01,  1.59s/cell]
+[2023-10-19T12:43:26.086+0000] {docker.py:406} INFO - Executing: 100%|██████████| 27/27 [00:28<00:00,  1.19s/cell]
+[2023-10-19T12:43:29.378+0000] {docker.py:406} INFO - Executing: 100%|██████████| 27/27 [00:31<00:00,  1.17s/cell]
+[2023-10-19T12:43:30.782+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=copy_tranform_to_mongo, task_id=transform_data_by_pandas, execution_date=20210423T000000, start_date=20231019T124256, end_date=20231019T124330
+[2023-10-19T12:43:30.965+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-19T12:43:31.469+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

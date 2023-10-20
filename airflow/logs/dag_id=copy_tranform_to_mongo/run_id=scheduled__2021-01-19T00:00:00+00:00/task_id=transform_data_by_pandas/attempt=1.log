@@ -1,0 +1,35 @@
+[2023-10-19T13:04:48.942+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-01-19T00:00:00+00:00 [queued]>
+[2023-10-19T13:04:48.961+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-01-19T00:00:00+00:00 [queued]>
+[2023-10-19T13:04:48.962+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2023-10-19T13:04:48.993+0000] {taskinstance.py:1382} INFO - Executing <Task(DockerOperator): transform_data_by_pandas> on 2021-01-19 00:00:00+00:00
+[2023-10-19T13:04:49.003+0000] {standard_task_runner.py:57} INFO - Started process 254 to run task
+[2023-10-19T13:04:49.012+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'copy_tranform_to_mongo', 'transform_data_by_pandas', 'scheduled__2021-01-19T00:00:00+00:00', '--job-id', '61', '--raw', '--subdir', 'DAGS_FOLDER/file_***-mongo.py', '--cfg-path', '/tmp/tmp9pov9bsc']
+[2023-10-19T13:04:49.015+0000] {standard_task_runner.py:85} INFO - Job 61: Subtask transform_data_by_pandas
+[2023-10-19T13:04:49.086+0000] {task_command.py:416} INFO - Running <TaskInstance: copy_tranform_to_mongo.transform_data_by_pandas scheduled__2021-01-19T00:00:00+00:00 [running]> on host f2b9ba520501
+[2023-10-19T13:04:49.201+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='copy_tranform_to_mongo' AIRFLOW_CTX_TASK_ID='transform_data_by_pandas' AIRFLOW_CTX_EXECUTION_DATE='2021-01-19T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2021-01-19T00:00:00+00:00'
+[2023-10-19T13:04:49.234+0000] {docker.py:337} INFO - Starting docker container from image python/pandas:1.0.0
+[2023-10-19T13:04:50.305+0000] {docker.py:406} INFO - Input Notebook:  /opt/pandasapp/notebooks/tiktok_google_reviews.ipynb
+Output Notebook: /opt/pandasapp/notebooks/tiktok_google_reviews.ipynb
+[2023-10-19T13:04:50.389+0000] {docker.py:406} INFO - Executing:   0%|          | 0/27 [00:00<?, ?cell/s]
+[2023-10-19T13:04:52.309+0000] {docker.py:406} INFO - Executing notebook with kernel: python3
+[2023-10-19T13:04:52.335+0000] {docker.py:406} INFO - Executing:   4%|▎         | 1/27 [00:01<00:50,  1.95s/cell]
+[2023-10-19T13:04:53.837+0000] {docker.py:406} INFO - Executing:  15%|█▍        | 4/27 [00:03<00:17,  1.29cell/s]
+[2023-10-19T13:04:58.602+0000] {docker.py:406} INFO - Executing:  22%|██▏       | 6/27 [00:08<00:30,  1.48s/cell]
+[2023-10-19T13:04:58.747+0000] {docker.py:406} INFO - Executing:  33%|███▎      | 9/27 [00:08<00:14,  1.27cell/s]
+[2023-10-19T13:04:58.880+0000] {docker.py:406} INFO - Executing:  41%|████      | 11/27 [00:08<00:08,  1.79cell/s]
+[2023-10-19T13:04:59.308+0000] {docker.py:406} INFO - Executing:  48%|████▊     | 13/27 [00:08<00:06,  2.21cell/s]
+[2023-10-19T13:04:59.418+0000] {docker.py:406} INFO - Executing:  52%|█████▏    | 14/27 [00:09<00:05,  2.56cell/s]
+[2023-10-19T13:05:00.411+0000] {docker.py:406} INFO - Executing:  59%|█████▉    | 16/27 [00:10<00:04,  2.34cell/s]
+[2023-10-19T13:05:02.110+0000] {docker.py:406} INFO - Executing:  63%|██████▎   | 17/27 [00:11<00:06,  1.48cell/s]
+[2023-10-19T13:05:02.482+0000] {docker.py:406} INFO - Executing:  70%|███████   | 19/27 [00:12<00:03,  2.00cell/s]
+[2023-10-19T13:05:03.592+0000] {docker.py:406} INFO - Executing:  74%|███████▍  | 20/27 [00:13<00:04,  1.60cell/s]
+[2023-10-19T13:05:04.107+0000] {docker.py:406} INFO - Executing:  78%|███████▊  | 21/27 [00:13<00:03,  1.67cell/s]
+[2023-10-19T13:05:04.957+0000] {docker.py:406} INFO - Executing:  81%|████████▏ | 22/27 [00:14<00:03,  1.51cell/s]
+[2023-10-19T13:05:05.600+0000] {docker.py:406} INFO - Executing:  85%|████████▌ | 23/27 [00:15<00:02,  1.52cell/s]
+[2023-10-19T13:05:05.815+0000] {docker.py:406} INFO - Executing:  93%|█████████▎| 25/27 [00:15<00:00,  2.36cell/s]
+[2023-10-19T13:05:08.131+0000] {docker.py:406} INFO - Executing:  96%|█████████▋| 26/27 [00:17<00:00,  1.16cell/s]
+[2023-10-19T13:05:10.934+0000] {docker.py:406} INFO - Executing: 100%|██████████| 27/27 [00:20<00:00,  1.31cell/s]
+[2023-10-19T13:05:10.938+0000] {docker.py:406} INFO - 
+[2023-10-19T13:05:12.236+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=copy_tranform_to_mongo, task_id=transform_data_by_pandas, execution_date=20210119T000000, start_date=20231019T130448, end_date=20231019T130512
+[2023-10-19T13:05:12.340+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2023-10-19T13:05:12.421+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check

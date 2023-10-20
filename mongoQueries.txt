@@ -1,0 +1,21 @@
+app_reviews> db.tiktok_reviews.aggregate([{ $project: { content: 1, thumbsUpCount: 1, _id: 0 } },{$sort:{thumbsUpCount:-1}},{$limit:5}]) # Top 5 comments
+db.tiktok_reviews.find({$expr: { $lt: [{ $strLenCP: '$content' }, 6]}}) # The length of content less than 6
+
+db.tiktok_reviews.aggregate([
+
+    {$project: {
+        toDate: {$toDate:'$createdAt'},
+        score:1,
+    }},
+    {$project: {
+        date: {$dateToString: {format: "%Y-%m-%d", date: "$toDate"}},
+        score:1
+    }},
+     
+    {$group: {
+	_id: '$date',
+	avg_score: {$avg: '$score'}
+	}},
+]) # Average score per day
+
+
